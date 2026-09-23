@@ -3,16 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NucleoForge Technologies</title>
+    <title>NucleoForge | Custom Software & Cloud Solutions</title>
+    <meta name="description" content="NucleoForge delivers custom software development, cloud solutions, and digital transformation for enterprises.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 100px; background-color: #f4f4f4; }
-        h1 { color: #333; }
-        p { color: #666; }
+        /* Reset y Estilos Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: #333; line-height: 1.6; background-color: #f9fafb; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* Variables de Color */
+        :root {
+            --primary-color: #1e3a8a; /* Azul corporativo */
+            --secondary-color: #3b82f6;
+            --dark-color: #111827;
+            --light-color: #f3f4f6;
+            --text-muted: #6b7280;
+        }
+
+        /* Navegación */
+        nav {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { font-weight: 500; color: var(--dark-color); transition: color 0.3s; }
+        .nav-links a:hover { color: var(--secondary-color); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: #fff;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        .hero-content { max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2; }
+        .hero p { font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: #fff;
+            color: var(--primary-color);
+            border-radius: 5px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+
+        /* Secciones Generales */
+        .section { padding: 5rem 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 3rem; color: var(--dark-color); }
+
+        /* Servicios */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+        .service-icon { font-size: 2rem; margin-bottom: 1rem; }
+        .service-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--primary-color); }
+        .service-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* Sobre Nosotros */
+        .about-section { background-color: #fff; }
+        .about-content { display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; }
+        .about-text { flex: 1; min-width: 300px; }
+        .about-text h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--dark-color); }
+        .about-text p { margin-bottom: 1rem; color: var(--text-muted); }
+        .about-stats { flex: 1; min-width: 300px; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .stat-item { background: var(--light-color); padding: 1.5rem; border-radius: 8px; text-align: center; }
+        .stat-item h4 { font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem; }
+        .stat-item p { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* Contacto */
+        .contact-section { text-align: center; background-color: var(--dark-color); color: #fff; }
+        .contact-section h2 { font-size: 2rem; margin-bottom: 1rem; }
+        .contact-section p { margin-bottom: 2rem; opacity: 0.8; }
+        .contact-section .btn { background-color: var(--secondary-color); color: #fff; }
+
+        /* Footer */
+        footer { text-align: center; padding: 2rem; background-color: #0f172a; color: #9ca3af; font-size: 0.875rem; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; } /* Ocultar menú en móviles para simplificar */
+            .about-content { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
-    <h1>NucleoForge Technologies</h1>
-    <p>Custom software development, cloud solutions, and digital transformation for businesses.</p>
-    <p>Contact: contacto@nucleoforge.com</p>
+
+    <!-- Navegación -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">NucleoForge</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Building the Future of Enterprise Software</h1>
+            <p>Custom software development, cloud solutions, and digital transformation tailored for your business growth.</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+    </header>
+
+    <!-- Servicios -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Core Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Custom Software</h3>
+                    <p>Tailor-made applications designed to solve your specific business challenges and streamline operations.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">☁️</div>
+                    <h3>Cloud Solutions</h3>
+                    <p>Scalable, secure, and efficient cloud infrastructure and migration services (AWS, Azure, GCP).</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>Digital Transformation</h3>
+                    <p>Modernizing legacy systems and integrating cutting-edge technology to enhance customer experience.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>DevOps & Automation</h3>
+                    <p>CI/CD pipelines, infrastructure as code, and automated testing for rapid, reliable delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Why Choose NucleoForge?</h3>
+                    <p>We don't believe in one-size-fits-all. Every solution we build is specifically engineered to solve your unique business challenges.</p>
+                    <p>Our architectures are designed to grow with your business, ensuring performance remains optimal as your user base and data volume expand. We adhere to rigorous security standards to protect your most valuable asset—your data.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <h4>100%</h4>
+                        <p>Tailored Solutions</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>24/7</h4>
+                        <p>Support & Monitoring</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>Agile</h4>
+                        <p>Development Methodology</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>Secure</h4>
+                        <p>By Design Architecture</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Let's discuss how NucleoForge can help you achieve your technology goals.</p>
+            <a href="mailto:contacto@nucleoforge.com" class="btn">Contact Us Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 NucleoForge Technologies. All rights reserved.</p>
+        <p>Custom Software Development | Cloud Solutions | Digital Transformation</p>
+    </footer>
+
 </body>
 </html>
